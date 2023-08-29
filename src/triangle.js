@@ -3,6 +3,14 @@ export default function Triangle(side1, side2, side3) {
   this.side2 = side2;
   this.side3 = side3;
 }
+Triangle.prototype.isBigTriangle = function(){
+  const sum = this.side1 + this.side2 + this.side3;
+  if(sum > 10){
+    return 'big';
+  } else {
+    return 'little';
+  }
+};
 
 Triangle.prototype.checkType = function() {
   if ((this.side1 > (this.side2 + this.side3)) || (this.side2 > (this.side1 + this.side3)) || (this.side3 > (this.side1 + this.side2))) {
@@ -15,3 +23,4 @@ Triangle.prototype.checkType = function() {
     return "isosceles triangle";
   }
 };
+
